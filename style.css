@@ -6,6 +6,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background: #aa9b74;
 }
@@ -107,7 +110,10 @@ section{
     padding: 100px 0;
 }
 .about .about-content,
-.services .serv-content{
+.services .serv-content,
+.contact .contact-content,
+.skills .skills-content
+{
     display: flex;
     flex-wrap: flex;
     align-items: center;
@@ -146,7 +152,7 @@ section{
 }
 
 
-.about{
+.about, .skills, .contact{
     font-family: sans-serif;
 }
 section .title{
@@ -238,59 +244,206 @@ section .title::after{
     transform: scale(1.05);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:1104px){
-    .home .max-width{
-        margin-left: 0px;
-    }
+.skills .title::after{
+    content: "what i know";
 }
-@media (max-width:991px){
-    .max-width{
-        padding: 0 50px;
-    }
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+    
 }
-@media (max-width: 947px){
-    .max-width{
-        padding: 0 50px;
-    }
-    .menu-btn{
-        display: block;
-        z-index: 999;
-        background:#757751;
-    }
+.skills .skills-content .left .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background: #757751;
+    border-radius: 20px;
+    text-align: center;
+}
+.skills .skills-content .left p{
+    background: #776a51;
+    border-radius: 10px;
+    justify-content: center;
+    line-break: normal;
+    font-size: 18px;
+}
+.skills .skills-content .left a{
+    display: inline-block;
+    background:#757751;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: 2px solid #776a51;
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+    background: none;
+
+}
+
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;
+
+}
+.skills .skills-content .right .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.skills .skills-content .right span{
+    font-weight: 500;
+    font-size: 18px;
+
+}
+.skills .skills-content .right .line{
+    height: 8px;
+    width: 100%;
+    background-color: gray;
+    border-radius: 10px;
+    position: relative;
+}
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+    background: honeydew;
+}
+.skills-content .right .html::before{
+    width: 90%;
+}
+.skills-content .right .css::before{
+    width: 60%;
+}
+.skills-content .right .javascript::before{
+    width: 80%;
+}
+.contact .title::after{
+    content: "get in touch";
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);  
+} */
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row img{
+    background: #757751;
+    border-radius: initial;
+}
+.contact .contact-content .info .head{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'flamenco';
+
+}
+.contact .contact-content .info .sub-title{
+    color: whitesmoke;
+}
+.contact .right form .fields{
+    display: flex;
+
+}
+
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea
+{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-family: 'flamenco';
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .email{
+    margin-right: 10px;
+}
+.contact .right form .textarea{
+    height: 80px;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact .right form .button{
+    height: 47px;
+    width: 170px;
+}
+.contact .right form .button button{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 20px;
+    background: #776a51;
+    border: 1px solid #333;
+}
+.contact .right form .button button:hover{
+    background: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 947px){
     .navbar .menu{
         position: fixed;
         height: 100vh;
@@ -303,27 +456,87 @@ section .title::after{
         transition: all 0.3s ease;
     }
     .navbar .menu.active{
-        left:0;
-    }
-    .navbar .menu li{
-        display:block;
+        left: 0;
     }
     .navbar .menu li a{
         display: inline-block;
         margin: 20px 0;
         font-size: 25px;
     }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
     .home .home-content .text-3{
         font-size: 35px;
     }
-
-}
-@media (max-width:690px){
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
     .max-width{
-        padding: 0 50px;
+        max-width: 800px;
+    }
+    .about .about-content .left{
+        width: 100%;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+@media(max-width: 690px){
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
     }
     .home .home-content .text-3{
-        font-size: 35px;
+        font-size: 32px;
     }
-
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card,
+    .skills .skills-content .column{
+        width: 100%;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
